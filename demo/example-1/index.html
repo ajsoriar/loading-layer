@@ -53,45 +53,95 @@
 
             console.log("(1) Value of this:", this); // In the case of "use strict"; this will be undefined.
 
+            var el = null,
+                theme = null;
 
-            var ajsrConsole = function (options, e) {
+            var loadingLayer = function (options, e) {
 
-                var loadingLayerID = "LL-"+ Date.now();
+                var loadingLayerID = "LL-"+ Date.now(),
+                    htmlString= "";
 
-                var htmlString = '<div id="' + loadingLayerID + '" style="position: fixed;' +
-                    'top: 0;' +
-                    'left: 0;' +
-                    'width: 100%;' +
-                    'height: 100%;' +
-                    'background-color: rgba(0,0,0,0.25);' +
-                    'color: #fff;' +
-                    'font-family: Courier New, Courier, monospace;' +
-                    'font-size: 11px;' +
-                    //'padding: 3px;' +
-                    'z-index: 99999;' +
-                    'overflow-x: hidden;' +
-                    'overflow-y: hidden;' +
-                    //'border: 1px solid #ef3ffd;
-                    '"><div id="' + loadingLayerID + '-mov" class="mov"></div></div>';
+                switch (theme) {
 
+                    case "bold-circle":
+                        break;
+                    default:
+                        htmlString += ''+
+                        '<div id="' + loadingLayerID + '" style="position: fixed;' +
+                        'top: 0;' +
+                        'left: 0;' +
+                        'width: 100%;' +
+                        'height: 100%;' +
+                        'background-color: rgba(0,0,0,0.25);' +
+                        'color: #fff;' +
+                        'font-family: Courier New, Courier, monospace;' +
+                        'font-size: 11px;' +
+                        'z-index: 99999;' +
+                        'overflow-x: hidden;' +
+                        'overflow-y: hidden;' +
+                        '"><div id="' + loadingLayerID + '-mov" class="mov"></div></div>';
+                }
                 createDivEl(htmlString);
             };
 
             var createDivEl  = function(htmlString) {
-                var el = document.createElement('div');
-                el.setAttribute("id", "loading-layer");
+                el = document.getElementById("loading-layer");
+                if ( el != null ) {
+                    cleanContent();
+                } else {
+                    el = document.createElement('div');
+                    el.setAttribute("id", "loading-layer");
+                }
                 el.innerHTML = htmlString;
-                document.body.appendChild(el)
-            }
+                document.body.appendChild(el);
+            };
+
+            var cleanContent = function () {
+                if ( el != null) el.innerHTML = "";
+            };
+
+            var hideLayer = function () {
+                cleanContent();
+            };
+
+            var showLayer = function () {
+                loadingLayer();
+            };
 
             window.LL = { // Use 'window' to share ny object in the global scope.
-                show: function () {
-                    ajsrConsole();
+                // init: function( params ){
+                //     params = {
+                //         mainColor: "white",
+                //         bgLayerColor: "black",
+                //         bgLayerOpacity: "0.3",
+                //         speed: '1s'
+                //     };
+                //     init( params );
+                // },
+                show: function (params) {
+                    if (params != null) overWriteDefauls(params);
+                    showLayer();
                 },
                 hide: function () {
+                    hideLayer();
+                },
+                // getStyles: function () {
+                //     return ["light-circle","bold-circle","double-circle","dots",""]
+                //     // main color, in-a-box
+                // },
+                setConf: function (params) {
+                    overWriteDefauls(params);
                     
+                    /* // params example ...
+                    {
+                        "theme":"light-circle",
+                        "mainColor": "white",
+                        "bgLayerColor": "black",
+                        "bgLayerOpacity": "0.3",
+                        "speed": '1s'
+                    }
+                    */ 
                 }
-
             };
 
         }());
@@ -100,7 +150,7 @@
 <body>
 
     <script>
-        LL.show();
+        //LL.show();
     </script>
     
     

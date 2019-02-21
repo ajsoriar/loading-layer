@@ -1,13 +1,11 @@
-
 'use strict';
 
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
         clean: {
             build: {
-                src: ['dist/*.*']
+                src: ['dist/*.*','dist/css/*.*','src/css/*.css']
             }
         },
         copy: {
@@ -19,6 +17,13 @@ module.exports = function(grunt) {
                         //'*.css'
                     ],
                     dest: 'dist',
+                    expand: true
+                },{
+                    cwd: 'src/css',
+                    src: [
+                        '*.css'
+                    ],
+                    dest: 'dist/css',
                     expand: true
                 }]
             }
@@ -54,12 +59,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+
 
     grunt.registerTask( 
         'build',
         'Compiles all of the assets and files to dist directory.',
-        //['clean', 'compass', 'copy', 'uglify', 'cssmin']
-        ['clean', 'copy', 'uglify']
+        ['clean', 'copy', 'uglify', 'cssmin']
     );
 
 };

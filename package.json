@@ -1,7 +1,7 @@
 {
   "name": "loading-layer",
-  "version": "0.0.1",
-  "description": "javascript library to manage animations",
+  "version": "1.0.0",
+  "description": "Javascript activity indicator",
   "main": "dist/loading-layer.min.js",
   "directories": {
     "test": "test"
@@ -13,6 +13,8 @@
   "keywords": [
     "loading-layer",
     "loading-spinner",
+    "js-spinner",
+    "javascript-spinner",
     "spinner"
   ],
   "author": "Andres J. Soria R. <<ajsoriar@gmail.com>>",
@@ -27,6 +29,7 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-uglify": "~0.2.2"
   }
 }

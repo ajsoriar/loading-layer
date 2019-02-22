@@ -1,7 +1,7 @@
 /**
  * loading-layer
  * Javascript activity indicator
- * @version v1.0.0 - 2019-02-21
+ * @version v1.0.1 - 2019-02-22
  * @link https://github.com/ajsoriar/loading-layer
  * @author Andres J. Soria R. <ajsoriar@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT

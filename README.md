@@ -38,8 +38,6 @@ In your javascript code this way:
 
 ### 4 Development instructions
 
-npm install -g eslint
-
 $ npm install
 
 grunt build

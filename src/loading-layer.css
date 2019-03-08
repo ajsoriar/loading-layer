@@ -16,18 +16,48 @@
     }
 }
 
+.LL {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+    color: #fff;
+    font-family: Courier New, Courier, monospace;
+    font-size: 11px;
+    z-index: 99999;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.LL-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
 .LL-spinner {
     position: absolute;
-    top: calc( 50% - 50px);
-    left: calc( 50% - 50px);
+    top: -50px;
+    left: -50px;
     display: block;
     width: 100px;
     height: 100px;
     border-radius: 100px;
+
+    /*
     border-right: 4px solid black;
     border-left: 4px solid black;
     border-top: 4px solid black;
-    border-bottom: 4px solid rgba(0,0,0,0.25); /* transparent; */
-    -webkit-animation: rotation 2s infinite linear;
+    border-bottom: 4px solid rgba(0,0,0,0.25);
+    */
+
+    border-right: 4px solid #ff0057;
+    border-left: 4px solid #0e27b3;
+    border-top: 4px solid #FFC107;
+    border-bottom: 4px solid rgb(23, 199, 30);
+
+    -webkit-animation: rotation 1s infinite linear;
     animation: rotation 1s infinite linear;
 }

@@ -12,12 +12,12 @@
     "use strict";
 
     var el = null,
-        theme = null;
+        theme = null,
+        loadingLayerID = "LL-"+ Date.now();
 
     var loadingLayer = function (options, e) {
 
-        var loadingLayerID = "LL-"+ Date.now(),
-            htmlString= "";
+        var htmlString= "";
 
         switch (theme) {
 
@@ -25,19 +25,19 @@
                 break;
             default:
                 htmlString += ''+
-                '<div id="' + loadingLayerID + '" class="LL-container" style="position: fixed;' +
-                'top: 0;' +
-                'left: 0;' +
-                'width: 100%;' +
-                'height: 100%;' +
-                'background-color: rgba(0,0,0,0.25);' +
-                'color: #fff;' +
-                'font-family: Courier New, Courier, monospace;' +
-                'font-size: 11px;' +
-                'z-index: 99999;' +
-                'overflow-x: hidden;' +
-                'overflow-y: hidden;' +
-                '"><div id="' + loadingLayerID + '-mov" class="LL-spinner"></div></div>';
+                '<div id="' + loadingLayerID + '-container" class="LL-container" style="position: fixed;' +
+                'top: 50%;' +
+                'left: 50%;' +
+                // 'width: 100%;' +
+                // 'height: 100%;' +
+                // 'background-color: rgba(0,0,0,0.25);' +
+                // 'color: #fff;' +
+                // 'font-family: Courier New, Courier, monospace;' +
+                // 'font-size: 11px;' +
+                // 'z-index: 99999;' +
+                // 'overflow-x: hidden;' +
+                // 'overflow-y: hidden;' +
+                '"><div id="' + loadingLayerID + '-spinner" class="LL-spinner"></div></div>';
         }
         createDivEl(htmlString);
     };
@@ -48,7 +48,8 @@
             cleanContent();
         } else {
             el = document.createElement('div');
-            el.setAttribute("id", "loading-layer");
+            el.setAttribute("id", loadingLayerID );
+            el.setAttribute("class", "LL loading-layer" );
         }
         el.innerHTML = htmlString;
         document.body.appendChild(el);
@@ -58,8 +59,15 @@
         if ( el != null) el.innerHTML = "";
     };
 
+    var destroyDOMnode = function () {
+        if (el === null) return;
+        document.body.removeChild(el);
+        el = null;
+    };
+
     var hideLayer = function () {
-        cleanContent();
+        //cleanContent();
+        destroyDOMnode();
     };
 
     var showLayer = function () {
@@ -89,7 +97,6 @@
         // },
         setConf: function (params) {
             overWriteDefauls(params);
-            
             /* // params example ...
             {
                 "theme":"light-circle",

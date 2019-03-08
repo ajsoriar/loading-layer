@@ -25,7 +25,7 @@
                 break;
             default:
                 htmlString += ''+
-                '<div id="' + loadingLayerID + '" style="position: fixed;' +
+                '<div id="' + loadingLayerID + '" class="LL-container" style="position: fixed;' +
                 'top: 0;' +
                 'left: 0;' +
                 'width: 100%;' +
@@ -37,7 +37,7 @@
                 'z-index: 99999;' +
                 'overflow-x: hidden;' +
                 'overflow-y: hidden;' +
-                '"><div id="' + loadingLayerID + '-mov" class="mov"></div></div>';
+                '"><div id="' + loadingLayerID + '-mov" class="LL-spinner"></div></div>';
         }
         createDivEl(htmlString);
     };

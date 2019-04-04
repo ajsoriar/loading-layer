@@ -1,6 +1,6 @@
 {
   "name": "loading-layer",
-  "version": "1.1.0",
+  "version": "v1.1.1",
   "description": "Simple javascript spinner with dark semi transparent background to be used in js apps as an activity indicator",
   "main": "dist/loading-layer.min.js",
   "directories": {

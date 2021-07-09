@@ -1,38 +1,40 @@
 {
-  "name": "loading-layer",
-  "version": "v1.1.1",
-  "description": "Simple javascript spinner with dark semi transparent background to be used in js apps as an activity indicator",
-  "main": "dist/loading-layer.min.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": "https://github.com/ajsoriar/loading-layer.git",
-  "keywords": [
-    "loading-layer",
-    "loading-spinner",
-    "js-spinner",
-    "javascript-spinner",
-    "spinner"
-  ],
-  "author": "Andres J. Soria R. <<ajsoriar@gmail.com>>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ajsoriar/loading-layer/issues"
-  },
-  "homepage": "https://github.com/ajsoriar/loading-layer#readme",
-  "devDependencies": {
-    "grunt": "~0.4",
-    "grunt-cleanempty": "^1.0.3",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-cssmin": "^1.0.2",
-    "grunt-contrib-uglify": "~0.2.2",
-    "eslint": "^5.15.1"
-  },
-  "dependencies": { 
-  }
+    "name": "loading-layer",
+    "version": "v1.1.2",
+    "description": "Simple javascript spinner with a dark semi-transparent background to be used in javascript Apps as an activity indicator",
+    "main": "dist/loading-layer.min.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": "https://github.com/ajsoriar/loading-layer.git",
+    "keywords": [
+        "loading-layer",
+        "loading-spinner",
+        "js-spinner",
+        "javascript-spinner",
+        "spinner"
+    ],
+    "author": "Andres J. Soria R. <<ajsoriar@gmail.com>>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ajsoriar/loading-layer/issues"
+    },
+    "homepage": "https://github.com/ajsoriar/loading-layer#readme",
+    "devDependencies": {
+        "grunt": "~0.4",
+        "grunt-cleanempty": "^1.0.3",
+        "grunt-contrib-clean": "~0.5.0",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-contrib-copy": "~0.5.0",
+        "grunt-contrib-cssmin": "^1.0.2",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-remove-comments": "^0.1.6",
+        "grunt-replace": "^1.0.1",
+        "eslint": "^5.15.1"
+    },
+    "dependencies": {}
 }

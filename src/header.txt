@@ -1,0 +1,8 @@
+/**
+ * loading-layer
+ * Simple javascript spinner with a dark semi-transparent background to be used in javascript Apps as an activity indicator.
+ * @version @@version-number - @@version-date
+ * @link https://github.com/ajsoriar/loading-layer
+ * @author Andres J. Soria R. <ajsoriar@gmail.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
